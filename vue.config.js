@@ -3,10 +3,11 @@
 //         transpileDependencies: true
 //     })
 module.exports = {
+    //代理跨域
     devServer: {
         proxy: {
             '/api': {
-                target: 'http://tingapi.ting.baidu.com',
+                target: 'https://c.y.qq.com/',
                 changeOrigin: true,
                 pathRewrite: {
                     "^/api": ""

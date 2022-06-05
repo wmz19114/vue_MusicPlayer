@@ -5,19 +5,11 @@
 </template>
 <script>
 import MusicListView from "./MusicListView.vue";
+import { getMusicList } from "@/api/index";
 export default {
     name:"MusicListData",
     created(){
-        this.$api.getMusicList({
-            method:"baidu.ting.billboard.billList",
-            type:1,
-            size:6,
-            offset:1
-            
-        }).then(res =>{
-            console.log(res)
-        })
-
+        getMusicList()
     },
     components:{
         MusicListView
