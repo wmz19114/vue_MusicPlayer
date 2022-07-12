@@ -8,12 +8,16 @@
 
         </ul>
     </div>
+    <div class="play">
+        播放栏
+    </div>
 </template>
+
+
 <script>
-export default {
-  
-}
+export default { }
 </script>
+
 <style scoped lang="less">
 .top-nav{
     display: flex;
@@ -31,6 +35,14 @@ export default {
             border-bottom: 2px solid #dc8f8f;
         }
     }
+}
+.play {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    background: rgb(146, 164, 228);
+    height: 13%;
+    width: 100%;
 }
 
 
