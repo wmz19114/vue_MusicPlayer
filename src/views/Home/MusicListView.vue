@@ -2,44 +2,80 @@
     <div class="collection-block">
         <div class="block-padding">
             <div class="tittle">
-                <h3>新歌榜</h3>
+                <h3>精选歌单</h3>
                 <a href="#">更多</a>
             </div>
-            <div class="clearfix">
-                <div class="item">
+            <div class="list clearfix">
+                <div class="item" 
+                v-for="(item, index) in musiclist" :key="index"
+                :class="{'clear-padding':index%3 != 1}">
                     <div class="img-warpper">
-                        <img src="http://p2.music.126.net/RP3U3olU64Zgw6klqWJZSw==/109951164976996948.jpg?param=130y130" alt="丢了你">
+                        <img :src="item.coverImgUrl" alt="">
                     </div>
-                    <div class="gary">
-                        丢了你
-                    </div>
-                    <div class="main">
-                        许DaTou
-                    </div>
+                    <div class="gray">
+                        {{item.name}}
+                    </div>                    
                 </div>
-              
-
             </div>
-
         </div>
-
-    </div>
+       
+     </div>
+     
+        <div class="block-padding">
+            <div class="tittle">
+                <h3>猜你想听</h3>
+                <a href="#">更多</a>
+            </div>
+            <div class="list clearfix">
+                <div class="item" 
+                v-for="(item, index) in musiclist" :key="index"
+                :class="{'clear-padding':index%3 != 1}">
+                    <div class="img-warpper">
+                        <img :src="item.picUrl" alt="">
+                    </div>
+                    <div class="gray">
+                        {{item.name}}
+                    </div>                    
+                </div>
+            </div>
+        </div>
+     
 </template>
 <script>
 export default {
-  
+    name:"MusicListView",
+    data(){
+        return{
+        }
+    } ,
+    props:{
+        musiclist:{
+            type:Array,
+            default:function(){
+                return []
+            }
+        }
+    }
 }
 </script>
+
+
 <style scoped>
-    .item{
-        float: left;
+
+    .list .item {
+    float: left;
+    width: 31.33%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
     }
+   
     .collection-block{
         background-color: #f8f8f8;
         padding: 5px 0;
     }
     .block-padding{
-        padding: 10px 70px;
+        padding: 10px 17px;
         background-color: #fff;
     }
     .tittle{
@@ -62,6 +98,10 @@ export default {
     .gray{
         font-size: 12px;
         color: #999;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        
     }
     .btn-more{
         font-size: 12px;

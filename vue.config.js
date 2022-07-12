@@ -1,13 +1,9 @@
-// const { defineConfig } = require('@vue/cli-service')
-// module.exports = defineConfig({
-//         transpileDependencies: true
-//     })
 module.exports = {
     //代理跨域
     devServer: {
         proxy: {
             '/api': {
-                target: 'https://c.y.qq.com/',
+                target: 'https://netease-cloud-music-api-lime-rho.vercel.app/',
                 changeOrigin: true,
                 pathRewrite: {
                     "^/api": ""

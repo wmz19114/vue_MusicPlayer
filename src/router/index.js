@@ -14,7 +14,7 @@ const routes = [{
             },
             {
                 path: '/topic',
-                name: 'Topic',
+                name: 'topic',
                 component: () =>
                     import ("../views/topic.vue")
             },
