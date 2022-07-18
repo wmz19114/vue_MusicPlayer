@@ -1,46 +1,49 @@
 <template>
     <div v-if="goodMusicList.length>0">
-        <MusicListView :musiclist="goodMusicList"/>
-        <MusicListView :musiclist="likeMusicList"/>
+        <MusicListView type="精选歌单" :goodlist="goodMusicList"/>
+        <MusicListView type="猜你想听" :likelist="likeMusicList"/>
+
 
     </div>
+   
 </template>
+
 <script>
 import MusicListView from "./MusicListView";
+
 export default {
-    name:"MusicListData",
+    name:"goodMusicListData",
     data(){
         return{
             goodMusicList:[],
             likeMusicList:[],
-        }
+           }
+        
     },
-    created(){},
     mounted(){
         this.$api.getGoodMusicList({
-        limit:9
-            
+        limit:6            
         }).then(response =>{
             console.log(response);
             this.goodMusicList = response.data.playlists
-        });
+        }),
 
         this.$api.getLikeMusicList({
-        limit:9
-            
+        limit:6            
         }).then(response =>{
             console.log(response);
             this.likeMusicList = response.data.result
         })
+    },
+    
+    components:{
+        MusicListView,
+    },
 
-
-      
+   
         
 
-    },
-    components:{
-        MusicListView
-    }
+   
 }
 </script>
 <style>

@@ -29,8 +29,22 @@ const routes = [{
                 name: 'search',
                 component: () =>
                     import ("../views/search.vue")
+            },
+            {
+                path: '/player/:id',
+                name: 'player',
+                component: () =>
+                    import ("../views/player.vue")
+
             }
         ]
+    },
+    {
+        path: "/more/:type",
+        name: "More",
+        component: () =>
+            import ("../views/Home/MusicMore.vue")
+
     }
 
 ]

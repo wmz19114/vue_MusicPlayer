@@ -12,6 +12,8 @@
         播放栏
     </div>
 </template>
+<footer>
+</footer>
 
 
 <script>
@@ -20,6 +22,7 @@ export default { }
 
 <style scoped lang="less">
 .top-nav{
+    
     display: flex;
     background:#fff;
     li{
@@ -29,21 +32,14 @@ export default { }
         a{
             display: block;
             padding-bottom: 8px;
-
         }
         .active{
             border-bottom: 2px solid #dc8f8f;
         }
     }
+    
 }
-.play {
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    background: rgb(146, 164, 228);
-    height: 13%;
-    width: 100%;
-}
+
 
 
 
